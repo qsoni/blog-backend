@@ -5,9 +5,6 @@
 {% endblock %}
 {% block content %}
 {% load static %}
-<body>
-
-
   <!--================ Hero sm Banner start =================-->
   <section class="mb-30px">
     <div class="container">
@@ -16,6 +13,7 @@
           <h1>Blog details</h1>
           <nav aria-label="breadcrumb" class="banner-breadcrumb">
             <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
               <li class="breadcrumb-item active" aria-current="page">Blog Details</li>
             </ol>
           </nav>
@@ -62,32 +60,32 @@
             </div>
 
 
-                <div class="comments-area">
-                    <h4>{{post.comments|length}} Comments</h4>
-                  {% for comment in post.comments %}
-                    <div class="comment-list">
-                        <div class="single-comment justify-content-between d-flex">
-                            <div class="user justify-content-between d-flex">
-                                <div class="desc">
-                                    <h5><a href="#">{{comment.author}}</a></h5>
-                                    <p class="date">{{comment.published_at}}</p>
-                                    <p class="comment">
-                                      {{comment.text}}
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="reply-btn">
-                              <a href="" class="btn-reply text-uppercase">reply</a>
-                            </div>
+            <div class="comments-area">
+              <h4>{{post.comments|length}} Comments</h4>
+                {% for comment in post.comments %}
+                  <div class="comment-list">
+                    <div class="single-comment justify-content-between d-flex">
+                      <div class="user justify-content-between d-flex">
+                        <div class="desc">
+                          <h5><a href="#">{{comment.author}}</a></h5>
+                          <p class="date">{{comment.published_at}}</p>
+                          <p class="comment">
+                            {{comment.text}}
+                          </p>
+                        </div>
+                      </div>
+                        <div class="reply-btn">
+                          <a href="" class="btn-reply text-uppercase">reply</a>
                         </div>
                     </div>
-                  {% endfor %}
-                </div>
+                  </div>
+                {% endfor %}
+            </div>
         </div>
 
 
           <!-- Start Blog Post Siddebar -->
-          <div class="col-lg-4 sidebar-widgets">
+            <div class="col-lg-4 sidebar-widgets">
               <div class="widget-wrap">
                 <div class="single-sidebar-widget newsletter-widget">
                   <h4 class="single-sidebar-widget__title">Newsletter</h4>
@@ -112,6 +110,4 @@
   </section>
   <!--================ End Blog Post Area =================-->
   <script src="{% static './scripts.js' %}"></script>
-</body>
-</html>
 {% endblock %}
