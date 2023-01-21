@@ -5,6 +5,7 @@
 {% endblock %}
 {% block content %}
 {% load static %}
+
   <!--================ Hero sm Banner start =================-->
   <section class="mb-30px">
     <div class="container">
@@ -23,19 +24,18 @@
   </section>
   <!--================ Hero sm Banner end =================-->
 
-
   <!--================ Start Blog Post Area =================-->
   <section class="blog-post-area section-margin">
     <div class="container">
       <div class="row">
         <div class="col-lg-8">
-            <div class="main_blog_details">
-              {% if post.image_url %}
-                <img class="img-fluid" src={{post.image_url}} alt="post img">
-              {% else %}
-                <img class="img-fluid" src="{% static 'img/banner/blog.png' %}" alt="img">
-              {%endif%}
-                <h4>{{post.title}}</h4>
+          <div class="main_blog_details">
+            {% if post.image_url %}
+              <img class="img-fluid" src={{post.image_url}} alt="post img">
+            {% else %}
+              <img class="img-fluid" src="{% static 'img/banner/blog.png' %}" alt="img">
+            {%endif%}
+              <h4>{{post.title}}</h4>
                 <div class="user_details">
                   <div class="mt-sm-0 mt-3">
                     <div class="media">
@@ -57,7 +57,7 @@
                     <a href="#"><i class="fab fa-behance"></i></a>
                   </div>
                 </div>
-            </div>
+          </div>
 
 
             <div class="comments-area">
@@ -83,7 +83,6 @@
             </div>
         </div>
 
-
           <!-- Start Blog Post Siddebar -->
             <div class="col-lg-4 sidebar-widgets">
               <div class="widget-wrap">
@@ -95,16 +94,16 @@
                         onblur="this.placeholder = 'Enter email'">
                     </div>
                   </div>
-                  <button class="bbtns d-block mt-20 w-100">Subcribe</button>
-                </div>
+                <button class="bbtns d-block mt-20 w-100">Subcribe</button>
+              </div>
 
 
-                <div class="single-sidebar-widget post-category-widget">
-                  <h4 class="single-sidebar-widget" style="height:200px;">Здесь будет реклама</h4>
-                </div>
+              <div class="single-sidebar-widget post-category-widget">
+                <h4 class="single-sidebar-widget" style="height:200px;">Здесь будет реклама</h4>
               </div>
             </div>
-          <!-- End Blog Post Siddebar -->
+          </div>
+        <!-- End Blog Post Siddebar -->
       </div>
     </div>
   </section>
